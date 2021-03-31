@@ -13,11 +13,8 @@ class SecondActivity : AppCompatActivity()
         binding = ActivitySecondBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
-
         var bundle : Bundle ? = intent.extras
-
         var login: String? = bundle!!.getString("user_login")
-        binding.bienvenida.text = "bienvenido $login"
-
+        binding.bienvenida.text = "Bienvenido $login"
     }
 }
