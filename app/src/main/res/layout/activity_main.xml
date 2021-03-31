@@ -17,4 +17,27 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.067" />
 
+    <Button
+        android:id="@+id/sendLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="276dp"
+        android:text="login"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/login"
+        android:layout_width="330dp"
+        android:layout_height="41dp"
+        android:hint="introduce aqui tu nombre"
+        app:layout_constraintBottom_toTopOf="@+id/sendLogin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cambiarVentana"
+        app:layout_constraintVertical_bias="0.562" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
