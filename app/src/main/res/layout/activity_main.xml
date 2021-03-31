@@ -19,13 +19,13 @@
 
     <Button
         android:id="@+id/sendLogin"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="276dp"
+        android:layout_marginBottom="360dp"
         android:text="login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.textfield.TextInputEditText
@@ -38,6 +38,15 @@
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cambiarVentana"
-        app:layout_constraintVertical_bias="0.562" />
+        app:layout_constraintVertical_bias="0.781" />
+
+    <Button
+        android:id="@+id/shareInfo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="share status to online"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sendLogin" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -33,6 +33,15 @@ class MainActivity : AppCompatActivity()
             startActivity(intent)
 
         }
+        binding.shareInfo.setOnClickListener {
+            var message = "hola soy ${binding.login.toString()}"
+            var intent = Intent()
+            intent.action=Intent.ACTION_SEND
+            intent.putExtra(Intent.EXTRA_TEXT,message)
+            intent.type = "text/plain"
+            startActivity(Intent.createChooser(intent,"Compartir con: "))
+
+        }
         
     }
 }
