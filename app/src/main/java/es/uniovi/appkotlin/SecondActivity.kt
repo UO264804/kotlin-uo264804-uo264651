@@ -8,8 +8,8 @@ import es.uniovi.appkotlin.databinding.ActivitySecondBinding
 
 class SecondActivity : AppCompatActivity() {
     lateinit var binding: ActivitySecondBinding
-    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
-        super.onCreate(savedInstanceState,persistentState)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
         binding = ActivitySecondBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
@@ -20,7 +20,8 @@ class SecondActivity : AppCompatActivity() {
         Log.d("seguimiento","despues del bundle")
 
         var login: String? = bundle!!.getString("user_login")
-        binding.bienvenida.setText("bienvenido " + login.toString() )
+        var texto = "bienvenido$login"
+        binding.bienvenida.setText(texto)
 
     }
 }

@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity()
     {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
-        val view = binding.root
+        var view = binding.root
         setContentView(view)
 
         binding.cambiarVentana.setOnClickListener {
@@ -24,10 +24,9 @@ class MainActivity : AppCompatActivity()
             Toast.makeText(this, "se ha pulsado el boton de cambiar ventana", Toast.LENGTH_SHORT).show()
         }
         binding.sendLogin.setOnClickListener {
-            val user_login: String = binding.login.text.toString()
+            var user_login: String = binding.login.text.toString()
 
             var intent:Intent = Intent(this,SecondActivity::class.java)
-
 
             intent.putExtra("user_login",user_login)
 
