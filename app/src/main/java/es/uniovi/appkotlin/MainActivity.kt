@@ -11,6 +11,7 @@ class MainActivity : AppCompatActivity()
 {
     private lateinit var binding: ActivityMainBinding
     var Tag:String = ""
+
     override fun onCreate(savedInstanceState: Bundle?)
     {
         super.onCreate(savedInstanceState)
@@ -19,20 +20,14 @@ class MainActivity : AppCompatActivity()
         setContentView(view)
 
         binding.cambiarVentana.setOnClickListener {
-
-            Log.d(Tag,"pulsamos un boton")
             Toast.makeText(this, "se ha pulsado el boton de cambiar ventana", Toast.LENGTH_SHORT).show()
         }
         binding.sendLogin.setOnClickListener {
-            val user_login: String = binding.login.text.toString()
-
+            val userLogin: String = binding.login.text.toString()
             var intent:Intent = Intent(this,SecondActivity::class.java)
-
-
-            intent.putExtra("user_login",user_login)
-
+            intent.putExtra("user_login",userLogin)
+            Toast.makeText(this, "se ha pulsado el boton de login", Toast.LENGTH_SHORT).show()
             startActivity(intent)
-
         }
         
     }
