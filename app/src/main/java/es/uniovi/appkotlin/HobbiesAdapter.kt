@@ -19,7 +19,7 @@ class HobbiesAdapter(private val context: Context, private val hobbies: List<Hob
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder
     {
-        val view = LayoutInflater.from(context).inflate(R.layout.list_item, parent)
+        val view = LayoutInflater.from(context).inflate(R.layout.list_item, parent,false)
         return MyViewHolder(view)
     }
 
