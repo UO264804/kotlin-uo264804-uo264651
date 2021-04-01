@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <string name="app_name">AppKotlin</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hola blank fragment</string>
+    <string name="btn_login">login</string>
+    <string name="hint">escribre aqui tu nombre</string>
+    <string name="shareStatus">compartir status </string>
+    <string name="btn_recyclerviewdemo">Recycler View Demo</string>
+    <string name="btn_cambiarVentana">cambiar ventana</string>
+    <string name="btn_login_toast">se pulso el boton de login</string>
+
+
+
+</resources>

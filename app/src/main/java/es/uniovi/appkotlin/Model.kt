@@ -2,8 +2,14 @@ package es.uniovi.appkotlin
 
 data class Hobby(var title: String)
 
+class MyClass{
+    object Supplier2{
+        val x= "algo"
+    }
+} //para acceder a x -> MyClass.x
+
 object Supplier {
-    val hobbies = listOf(
+    var hobbies = listOf(
         Hobby("Swimming"),
         Hobby("Reading"),
         Hobby("Walking"),

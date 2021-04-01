@@ -13,8 +13,18 @@ class SecondActivity : AppCompatActivity()
         binding = ActivitySecondBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+
+        //safe null operations
+        // 1) ?.
+        // ?.let{ }
+
         var bundle : Bundle ? = intent.extras
-        var login: String? = bundle!!.getString("user_login")
-        binding.bienvenida.text = "Bienvenido $login"
+
+        bundle?.let{
+            //asi comprobamos que no es null
+            var login: String? = bundle.getString(Constants.USER_LOGIN)
+            binding.bienvenida.text = "Bienvenido $login"
+        }
+
     }
 }

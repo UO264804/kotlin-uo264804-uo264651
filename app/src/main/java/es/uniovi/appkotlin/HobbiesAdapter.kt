@@ -12,8 +12,10 @@ import androidx.recyclerview.widget.RecyclerView
 
 class HobbiesAdapter(private val context: Context, private val hobbies: List<Hobby>) : RecyclerView.Adapter<HobbiesAdapter.MyViewHolder>()
 {
-    companion object
+    companion object //singleton
     {
+        //se inicia cuando se inicia la clase correspondiente -> companion object
+        //sin embargo si lo guardaramos como una variable a secas usa lazy declaration
         val TAG: String = HobbiesAdapter::class.java.simpleName
     }
 
@@ -43,12 +45,14 @@ class HobbiesAdapter(private val context: Context, private val hobbies: List<Hob
         {
             itemView.setOnClickListener {
                 currentHobby?.let {
-                    Toast.makeText(context,currentHobby!!.title + " Clicked !", Toast.LENGTH_SHORT)
+                    //safe null operator
+                    context.showToast(currentHobby!!.title + " Clicked !") //extension
                 }
             }
 
             itemView.findViewById<ImageView>(R.id.imgShare).setOnClickListener {
                 currentHobby?.let {
+                    //safe operator
                     val message: String = "My hobby is: " + currentHobby!!.title
                     val intent = Intent()
                     intent.action = Intent.ACTION_SEND

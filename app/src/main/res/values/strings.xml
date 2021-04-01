@@ -2,4 +2,11 @@
     <string name="app_name">AppKotlin</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="btn_login">login</string>
+    <string name="hint">write your name here</string>
+    <string name="shareStatus">share status to online</string>
+    <string name="btn_recyclerviewdemo">Recycler View Demo</string>
+    <string name="btn_cambiarVentana">change window</string>
+    <string name="btn_login_toast">logging in...</string>
+
 </resources>

@@ -9,6 +9,9 @@ import es.uniovi.appkotlin.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity()
 {
+    companion object{
+        val TAG: String = MainActivity::class.java.simpleName
+    }
     private lateinit var binding: ActivityMainBinding
     var tag:String = ""
     override fun onCreate(savedInstanceState: Bundle?)
@@ -19,14 +22,16 @@ class MainActivity : AppCompatActivity()
         setContentView(view)
 
         binding.cambiarVentana.setOnClickListener {
-            Toast.makeText(this, "Se ha pulsado el boton change window", Toast.LENGTH_SHORT).show()
+            showToast(resources.getString(R.string.btn_cambiarVentana)) //usando extension de kotlin
+            Log.i(TAG,"se ha pulsado el boton de cambio de ventana")
         }
 
         binding.sendLogin.setOnClickListener {
-            Toast.makeText(this, "Se ha pulsado el boton login", Toast.LENGTH_SHORT).show()
+           showToast(resources.getString(R.string.btn_login_toast))
+            Log.i(TAG,"se ha pulsado el boton de login")
             var userLogin: String = binding.login.text.toString()
             var intent:Intent = Intent(this,SecondActivity::class.java)
-            intent.putExtra("user_login",userLogin)
+            intent.putExtra(Constants.USER_LOGIN,userLogin) //usando el fichero AppConstraints
             startActivity(intent)
         }
 
