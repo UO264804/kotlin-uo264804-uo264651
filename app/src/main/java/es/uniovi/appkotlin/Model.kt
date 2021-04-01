@@ -9,7 +9,7 @@ class MyClass{
 } //para acceder a x -> MyClass.x
 
 object Supplier {
-    var hobbies = listOf(
+    var hobbies = mutableListOf(
         Hobby("Swimming"),
         Hobby("Reading"),
         Hobby("Walking"),
