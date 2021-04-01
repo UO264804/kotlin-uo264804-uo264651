@@ -1,16 +1,27 @@
 package es.uniovi.appkotlin
 
+import android.Manifest
+import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.content.pm.PackageManager
+import android.graphics.Bitmap
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
-import android.widget.Toast
+import android.view.Menu
+import android.view.MenuItem
+import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import es.uniovi.appkotlin.databinding.ActivityMainBinding
+import java.security.Permission
 
 class MainActivity : AppCompatActivity()
 {
     companion object{
         val TAG: String = MainActivity::class.java.simpleName
+        val OPEN_CAMERA=200
+        val REQUEST_CAMERA_PERMISSION=300
     }
     private lateinit var binding: ActivityMainBinding
     var tag:String = ""
@@ -20,6 +31,8 @@ class MainActivity : AppCompatActivity()
         binding = ActivityMainBinding.inflate(layoutInflater)
         var view = binding.root
         setContentView(view)
+        setSupportActionBar(binding.myToolbar)
+        var ig = binding.imageView;
 
         binding.cambiarVentana.setOnClickListener {
             showToast(resources.getString(R.string.btn_cambiarVentana)) //usando extension de kotlin
@@ -49,4 +62,34 @@ class MainActivity : AppCompatActivity()
             startActivity(intent)
         }
     }
+
+
+
+
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_settings, menu)
+        return true
+    }
+
+
+
+
+
+    override fun onOptionsItemSelected(item: MenuItem)=   when (item.itemId) {
+
+        R.id.action_settings-> {
+            true
+        }
+
+        R.id.action_camara -> {
+            true
+        }
+        else ->{
+            super.onOptionsItemSelected(item)
+        }
+
+    }
+
+
 }

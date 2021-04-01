@@ -8,5 +8,7 @@
     <string name="btn_recyclerviewdemo">Recycler View Demo</string>
     <string name="btn_cambiarVentana">change window</string>
     <string name="btn_login_toast">logging in...</string>
+    <string name="btn_ajustes">settings</string>
+    <string name="btn_camara">open camera</string>
 
 </resources>

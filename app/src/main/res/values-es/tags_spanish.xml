@@ -11,6 +11,8 @@
     <string name="btn_recyclerviewdemo">Recycler View Demo</string>
     <string name="btn_cambiarVentana">cambiar ventana</string>
     <string name="btn_login_toast">se pulso el boton de login</string>
+    <string name="btn_ajustes">ajustes</string>
+    <string name="btn_camara">abrir camara</string>
 
 
 
