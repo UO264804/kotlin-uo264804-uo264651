@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity()
         }
 
         binding.sendLogin.setOnClickListener {
-           showToast(resources.getString(R.string.btn_login_toast))
+            showToast(resources.getString(R.string.btn_login_toast))
             Log.i(TAG,"se ha pulsado el boton de login")
             var userLogin: String = binding.login.text.toString()
             var intent:Intent = Intent(this,SecondActivity::class.java)
