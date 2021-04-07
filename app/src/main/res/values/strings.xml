@@ -9,4 +9,6 @@
     <string name="btn_cambiarVentana">change window</string>
     <string name="btn_login_toast">logging in...</string>
     <string name="codigoCancel">No se ha devuelto ningun hobbie</string>
+    <string name="btn_ajustes">settings</string>
+    <string name="btn_camara">take a picture</string>
 </resources>

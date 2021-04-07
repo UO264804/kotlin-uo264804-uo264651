@@ -12,7 +12,8 @@
     <string name="btn_cambiarVentana">cambiar ventana</string>
     <string name="btn_login_toast">se pulso el boton de login</string>
     <string name="codigoCancel">No se ha devuelto ningun hobbie</string>
-
+    <string name="btn_ajustes">ajustes</string>
+    <string name="btn_camara">camara</string>
 
 
 </resources>

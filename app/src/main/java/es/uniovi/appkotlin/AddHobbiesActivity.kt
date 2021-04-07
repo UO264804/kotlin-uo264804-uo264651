@@ -16,7 +16,7 @@ class AddHobbiesActivity : AppCompatActivity()
         val view = binding.root
         setContentView(view)
 
-        binding.btnAñadir.setOnClickListener {
+        binding.btnAdd.setOnClickListener {
             val dat: String = binding.nombreHobbie.text.toString()
             val returnIntent = Intent()
             returnIntent.putExtra("nombreHobbie", dat)

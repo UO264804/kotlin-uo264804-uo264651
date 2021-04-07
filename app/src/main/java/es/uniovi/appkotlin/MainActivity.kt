@@ -36,7 +36,9 @@ class MainActivity : AppCompatActivity()
 
         binding.cambiarVentana.setOnClickListener {
             showToast(resources.getString(R.string.btn_cambiarVentana)) //usando extension de kotlin
-            Log.i(TAG,"se ha pulsado el boton de cambio de ventana")
+            Log.i(TAG,"se ha pulsado el boton de A BuclesActivity")
+           var intent:Intent = Intent(this,BuclesActivity::class.java)
+            startActivity(intent)
         }
 
         binding.sendLogin.setOnClickListener {
