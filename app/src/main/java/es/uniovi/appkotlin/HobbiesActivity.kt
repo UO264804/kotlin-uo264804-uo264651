@@ -25,10 +25,10 @@ class HobbiesActivity:AppCompatActivity()
         val adapter = HobbiesAdapter(this, Supplier.hobbies)
         binding.recyclerView.adapter = adapter
 
-        binding.addHobbies.setOnClickListener {
+        /*binding.addHobbies.setOnClickListener {
             var intent: Intent = Intent(this, AddHobbiesActivity::class.java)
             startActivityForResult(intent, 1)
-        }
+        }*/
     }
 
     override fun onActivityResult(requestCode:Int, resultCode:Int, data:Intent?)
