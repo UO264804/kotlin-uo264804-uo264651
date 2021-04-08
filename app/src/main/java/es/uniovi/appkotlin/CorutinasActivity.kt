@@ -2,10 +2,12 @@ package es.uniovi.appkotlin
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.TextView
 import es.uniovi.appkotlin.databinding.ActivityCorutinasBinding
 import es.uniovi.appkotlin.databinding.ActivityMainBinding
 import kotlinx.coroutines.*
 import kotlinx.coroutines.Dispatchers.IO
+import kotlinx.coroutines.Dispatchers.Main
 
 class CorutinasActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCorutinasBinding
@@ -39,12 +41,29 @@ class CorutinasActivity : AppCompatActivity() {
 
 
     }
+    /*
+    NUNCA ACTUALIZAR LA VISTA DESDE UN HILO QUE NO SEA EL PRINCIPAL O MAIN
+    SINO PUEDE CRASHEAR LA APP
+     */
+    private suspend fun setTextOnMainThread(input: String,id_textView:String) {
+        withContext (Main) {
+           when(id_textView){
+               "tv1"->{
+                   binding.tv1.setText(input)
+               }
+               "tv2"->{
+                   binding.tv2.setText(input)
+               }
+           }
+        }
+    }
+
 
     private suspend fun SimulandoLLamadaApi() {
         val result1 = fun1()
-        binding.tv1.setText(result1)
+        setTextOnMainThread(result1,"tv1")
         val result2 = fun2()
-        binding.tv2.setText(result2)
+        setTextOnMainThread(result2,"tv2")
 
     }
 
