@@ -37,13 +37,25 @@
         android:id="@+id/corutinas"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="lanzarcorutinas"
+        android:text="start Job"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cambiarVentana"
         app:layout_constraintVertical_bias="0.293" />
+
+    <Button
+        android:id="@+id/corutinas2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="corutinas conceptos"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cambiarVentana"
+        app:layout_constraintVertical_bias="0.56" />
 
     <Button
         android:id="@+id/sendLogin"
@@ -92,16 +104,14 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.86" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <ProgressBar
+        android:id="@+id/pBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="261dp"
+        android:layout_height="18dp"
+        app:layout_constraintBottom_toTopOf="@+id/login"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/corutinas"
-        app:layout_constraintVertical_bias="0.569"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintTop_toBottomOf="@+id/my_toolbar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
