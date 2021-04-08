@@ -165,7 +165,7 @@ class MainActivity : AppCompatActivity()
             }
         }
     }
-
+//siempre actualizar desde el hilo principal -> scope main
     private fun updateJobCompleteTextView(text: String){
         GlobalScope.launch (Main){
             showToast(text)
