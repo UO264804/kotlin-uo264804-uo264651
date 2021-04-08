@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_appkotlin_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppKotlin">
-        <activity android:name=".CorutinasActivity"></activity>
+        <activity android:name=".PersonaActivity"></activity>
+        <activity android:name=".CorutinasActivity" />
         <activity android:name=".BuclesActivity" />
         <activity android:name=".AddHobbiesActivity" />
         <activity android:name=".MainActivity">

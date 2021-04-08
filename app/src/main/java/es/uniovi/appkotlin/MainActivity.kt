@@ -25,14 +25,14 @@ import kotlinx.coroutines.*
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.Dispatchers.Main
 import java.util.*
+import java.util.concurrent.CancellationException
 
 class MainActivity : AppCompatActivity()
 {
     companion object{
         val TAG: String = MainActivity::class.java.simpleName
-
-
     }
+
     private val PROGRESS_MAX = 100
     private val PROGRESS_START = 0
     private val JOB_TIME = 4000 // ms
@@ -45,8 +45,12 @@ class MainActivity : AppCompatActivity()
         binding = ActivityMainBinding.inflate(layoutInflater)
         var view = binding.root
         setContentView(view)
-        setSupportActionBar(binding.myToolbar)
+        //setSupportActionBar(binding.myToolbar)
 
+        binding.funcionesOrdenes.setOnClickListener {
+            var intent:Intent = Intent(this,PersonaActivity::class.java)
+            startActivity(intent)
+        }
 
         binding.cambiarVentana.setOnClickListener {
             showToast(resources.getString(R.string.btn_cambiarVentana)) //usando extension de kotlin
@@ -88,21 +92,13 @@ class MainActivity : AppCompatActivity()
         binding.corutinas2.setOnClickListener {
             var intent:Intent = Intent(this,CorutinasActivity::class.java)
             startActivity(intent)
-
         }
     }
-
-
-
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_settings, menu)
         return true
     }
-
-
-
-
 
     override fun onOptionsItemSelected(item: MenuItem)=   when (item.itemId) {
 
@@ -184,4 +180,3 @@ class MainActivity : AppCompatActivity()
     }
 
 }
-
