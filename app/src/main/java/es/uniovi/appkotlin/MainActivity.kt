@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity()
         binding = ActivityMainBinding.inflate(layoutInflater)
         var view = binding.root
         setContentView(view)
-        //setSupportActionBar(binding.myToolbar)
+        setSupportActionBar(binding.myToolbar)
 
         binding.funcionesOrdenes.setOnClickListener {
             var intent:Intent = Intent(this,PersonaActivity::class.java)
