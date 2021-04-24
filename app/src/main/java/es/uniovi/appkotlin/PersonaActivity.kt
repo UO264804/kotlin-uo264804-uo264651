@@ -43,6 +43,7 @@ class PersonaActivity : AppCompatActivity()
     }
 
     // extension function to hide soft keyboard programmatically
+    // Con esto la clase activity puede utilizar este metodo como si fuera de su propia clase
     fun Activity.hideSoftKeyboard(){
         (getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager).apply {
             hideSoftInputFromWindow(currentFocus?.windowToken, 0)
@@ -76,12 +77,32 @@ class PersonaActivity : AppCompatActivity()
             binding.asturias.setTextColor(Color.parseColor("#00FF00"));
         }
     }
-
-    fun London(age: Int) = age >= 17
-
-    fun Kentucky(age: Int) = age >= 16
-
-    fun Dakota(age: Int) = age >= 14
-
-    fun Asturias(age: Int) = age >= 18
 }
+
+//Ejemplo de funciones usadas en primer orden
+//Ejemplo de funcion pasada de normal a utilizacion de expresiones
+fun London(age:Int):Boolean
+{
+  return age >= 17
+}
+//fun London(age: Int):Boolean = age >= 17
+//fun London(age: Int) = age >= 17
+
+//Cuidado, anteriormente al ser un ejemplo sencillo nos infiere que tipo de retorno pero podria causar otros problemas
+fun prueba(f : (Int) -> Int, g : (Int) -> Int):(Int)->Int
+{
+    return {x -> f(g(x))}
+}
+
+fun prueba2(f : (Int) -> Int, g : (Int) -> Int) : (Int)->Int = {x -> f(g(x))}
+
+//Aqui no puede inferir el tipo de X como en prueba dos porque hemos quitado el tipo de retorno que es de donde lo obtenia
+fun prueba3(f : (Int) -> Int, g : (Int) -> Int) = {x:Int -> f(g(x))}
+
+
+//Ejemplos de funciones utilizadas como expresiones
+fun Kentucky(age: Int) = age >= 16
+
+fun Dakota(age: Int) = age >= 14
+
+fun Asturias(age: Int) = age >= 18
