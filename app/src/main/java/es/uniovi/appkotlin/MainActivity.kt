@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity()
     companion object{
         val TAG: String = MainActivity::class.java.simpleName
     }
-
+    data class User(val name: String = "", val age: Int = 0)
     private val PROGRESS_MAX = 100
     private val PROGRESS_START = 0
     private val JOB_TIME = 4000 // ms
@@ -46,7 +46,8 @@ class MainActivity : AppCompatActivity()
         var view = binding.root
         setContentView(view)
         setSupportActionBar(binding.myToolbar)
-
+        var u:User = User("Pedro",18) //USO DE DATACLASS
+        showToast(u.toString())//USO DE EXTENSION DE FUNCIONES SIMPLE
         binding.funcionesOrdenes.setOnClickListener {
             var intent:Intent = Intent(this,PersonaActivity::class.java)
             startActivity(intent)
